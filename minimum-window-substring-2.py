@@ -11,7 +11,7 @@ class Solution:
                 mp[t] = 1
         print mp
         size = 0
-        ret = S
+        ret = ''
         left = 0
         minLen = lenS
         for right in range(lenS):
@@ -29,7 +29,7 @@ class Solution:
                         else:
                             mp[c] += 1
                     left += 1
-                if size == len(mp) and right - left + 1 < minLen:
+                if size == len(mp) and right - left + 1 <= minLen:
                     ret = S[left:right + 1]
                     minLen = right - left + 1
         return ret

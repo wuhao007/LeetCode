@@ -57,7 +57,7 @@ def rotate_str3(string, n):
 "453 12"
 
 def rotate_str3(string, n): 
-`   if n == 0:
+    if n == 0:
         return string
     str_len = len(string)
     if str_len <= 1:
