@@ -1,0 +1,17 @@
+Qantcast Spreadsheet Calculator coding challenge
+
+by Kevin Cheng, Nov 2012
+
+compiled with: g++ (GCC) 4.7.2 20120921 (Red Hat 4.7.2-2)
+
+Build using:
+    make
+
+
+Notes:
+    Made with the general assumption of properly formatted inputs, although
+the majority of bad inputs should be gracefully handled.
+
+    This version supports negative numbers, but it does not support the
+increment/decrement operators. I would need clarification as to whether
+or not to re-invoke the increment/decrement during recursive evaluations.
