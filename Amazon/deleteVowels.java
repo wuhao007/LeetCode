@@ -3,9 +3,12 @@ public class DeleteVowels {
         if (s == null) {
             return null;
         }
-        StringBuilder result = new StringBuilder();
+        //StringBuilder result = new StringBuilder();
+        StringBuffer result = new StringBuffer();
+        String v = "aeiouAEIOU";
         for (int i = 0; i < s.length(); i++) {
             char currChar = s.charAt(i);
+            /*
             switch (currChar) {
                 case 'a':
                 case 'A':
@@ -21,6 +24,10 @@ public class DeleteVowels {
                 default:
                     result.append(currChar);
                     break;
+            }
+            */
+            if (v.indexOf(currChar) == -1) {
+                result.append(currChar);
             }
         }
         return result.toString();
