@@ -1,4 +1,3 @@
-#pragma once
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 #include <deque>
@@ -11,26 +10,19 @@
 using namespace std;
 class Expression {
     public:
-        Expression(vector<vector<Expression> >* sSheet, const string& exp):
-                _sSheet(sSheet), _origExp(exp), _evaled(false), _busy(false) {}
-        double GetValue() { return _evaled ? _value : Eval(); }
+        Expression(const string& exp): 
+            _origExp(exp), _color(WHITE) {}
+        double GetValue(vector<vector<Expression> >& sSheet);
     private:
-        vector<vector<Expression> >* _sSheet;
-
+        typedef enum color {RED, WHITE, GREEN} color;
         string _origExp;
         double _value;
-        
-        bool _evaled;
-        bool _busy;
+        color _color;
 
-        deque<string> _tokens;
-        deque<double> _terms;
-
-        double Eval();
-        double Reduce();
-        double Parse(const string& token);
-        double Oper(const string& token);
-        double Deref(const string& s);
+        double Reduce(vector<vector<Expression> >& sSheet, deque<string>& tokens);
+        double Parse(const string& token, vector<vector<Expression> >& sSheet, deque<double>& terms);
+        double Oper(const string& token, deque<double>& terms);
+        double Deref(const string& s, vector<vector<Expression> >& sSheet);
 
         bool IsVal(const string& s);
         bool IsRef(const string& s);
