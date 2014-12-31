@@ -7,3 +7,4 @@ def moveZero(A):
     print A
     return len(A) - l
 print moveZero([1,0,2,0,3,0,4,0,5,0])
+print moveZero([1,0,0,2])
