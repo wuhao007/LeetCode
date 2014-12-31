@@ -28,7 +28,6 @@ def average_value_each_level_recursive(root, level, average):
             average[level] = (average[level][0] + root.val, average[level][1] + 1)
         average_value_each_level_recursive(root.left, level + 1, average)
         average_value_each_level_recursive(root.right, level + 1, average)
-    return map(lambda x : float(x[0]) / x[1], average)
 
 node1 = TreeNode(1)
 node2 = TreeNode(2)
@@ -44,4 +43,6 @@ node2.right = node5
 node3.left = node6
 node3.right = node7
 print average_value_each_level(node1)
-print average_value_each_level_recursive(node1, 0, [])
+average = []
+average_value_each_level_recursive(node1, 0, average)
+print map(lambda x : float(x[0]) / x[1], average)
