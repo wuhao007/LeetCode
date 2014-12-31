@@ -4,6 +4,7 @@ class TreeNode:
         self.parent = None
         self.left = None
         self.right = None
+
 class Solution:
     def inorder(self, lastNode, root):
         while root:
@@ -50,22 +51,37 @@ class Solution:
             if lastNode == root.left:
                 return lastNode, root
 
+    def getSuccessor(self, cur):
+        if cur.right:
+            cur = cur.right
+            while cur.left:
+                cur = cur.left
+        elif cur.parent:
+            while cur.parent is not None and cur == cur.parent.right: 
+                cur = cur.parent
+            cur = cur.parent if cur.parent else None
+        else: 
+            cur = None
+        return cur;
+    
     def intersection(self, head1, head2):
-        last1, node1 = self.inorder(None, head1)
-        last2, node2 = self.inorder(None, head2)
+        node1 = head1
+        while node1.left:
+            node1 = node1.left
+        node2 = head2
+        while node2.left:
+            node2 = node2.left
         ret = []
         while node1 is not None and node2 is not None:
             print node1.val, node2.val
             if node1.val < node2.val:
-                last1, node1 = self.inorder2(last1, node1)
+                node1 = self.getSuccessor(node1)
             elif node1.val == node2.val: 
                 ret += [node1.val]
-                last1, node1 = self.inorder2(last1, node1)
+                node1 = self.getSuccessor(node1)
             else:
-                last2, node2 = self.inorder2(last2, node2)
+                node2 = self.getSuccessor(node2)
         return ret
-
-
                 
 first1 = TreeNode(1)
 first2 = TreeNode(2)
@@ -115,4 +131,3 @@ second7.parent = second6
 
 solution = Solution()
 print solution.intersection(first4, second4)
-    
