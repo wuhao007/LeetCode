@@ -7,6 +7,6 @@ def count(S, n):
         for j in range(m):
             x = f[i - S[j]][j] if i - S[j] >= 0 else 0
             y = f[i][j - 1] if j >= 1 else 0
-            f[i][j] = x + y;
-    return f[n][m-1];
+            f[i][j] = x + y
+    return f[n][m-1]
 print count([1,2,3],4)
