@@ -6,11 +6,8 @@ class Solution:
         row = []
         for i in range(numRows):
             row += [1]
-            for j in range(i - 1, -1, -1):
-                if j == 0:
-                    row[j] = 1
-                else:
-                    row[j] = row[j - 1] + row[j]
+            for j in range(i - 1, 0, -1):
+                row[j] = row[j - 1] + row[j]
             print row
         for i in range(numRows - 1, 0, -1):
             row.pop() 
