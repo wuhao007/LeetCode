@@ -1,6 +1,6 @@
 r = open('new_years_resolution_example_input.txt', 'r')
+w = open('new_years_resolution_output.txt', 'w')
 T = int(r.readline())
-w = open('new_years_resolution_example_output.txt', 'w')
 #print T
 for i in range(T):
     GP, GC, GF = map(lambda x : int(x), r.readline().split())
@@ -12,7 +12,7 @@ for i in range(T):
     def helper(GP, GC, GF, index):
         if GP == GC == GF == 0:
             return True
-        elif GP < 0 or GC < 0 or GF < 0:
+        elif GP < 10 or GC < 10 or GF < 10:
             return False
         for i in range(index, N):
             if helper(GP - foods[i][0], GC - foods[i][1], GF - foods[i][2], i + 1):
@@ -23,4 +23,3 @@ for i in range(T):
             
 r.close()
 w.close()
-
