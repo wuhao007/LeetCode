@@ -4,7 +4,7 @@ class TaggedSentence:
         self.original = ''
         untagged = []
         tagged = []
-        classrTagged = []
+        classTagged = []
 
     def input(self, sentence):
         self.original = sentence
@@ -15,18 +15,21 @@ class TaggedSentence:
 
         untagged = []
         tagged = []
-        classrTagged = []
+        classTagged = []
         for word in sentence:
+            modify = False
             for key, value in listObject.items():
                 if word in key:
                     tagged += [word]
-                    classrTagged += [value]
-            else:
+                    classTagged += [value]
+                    modify = True
+                    break
+            if not modify: 
                 untagged += [word]
-                classrTagged += [word]
+                classTagged += [word]
         print 'untagged:    ', ' '.join(untagged)
         print 'tagged:      ', ' '.join(tagged)
-        print 'class tagged:', ' '.join(classrTagged)
+        print 'class tagged:', ' '.join(classTagged)
 
 tagged_sentence = TaggedSentence()
 tagged_sentence.input("I'm Jack and I'm three years old")
