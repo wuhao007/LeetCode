@@ -1,0 +1,48 @@
+Grit.
+Programming skills. First and foremost, you should be a passable programmer.  This role will require the ability to understand others' code and to write your own for some automation tasks. Currently we use Python and Go.
+Operating Systems. Experience in the Linux environment and a good understanding of its fundamentals.  If you can create Debian packages in less than 10 minutes, we are dying to meet you.  A solid understanding of filesystems and modern memory management, threads and processes, the user/kernel-space divide, and all those other implementation details that keep the gears turning.
+Configuration management. Puppet, Chef, etc.
+Monitoring tools. Nagios, Graphite, etc.
+Data stores. Experience with a big relational database (MySQL, PostgreSQL) and cache layers (memcached, Redis).  You should be able to write some basic SQL statements.
+Networking. Good working knowledge of TCP/IP.
+ 
+Strong architecture chops. You know how to build highly scalable, robust, and fault-tolerant services that support our unique rate-of-growth requirements. You stay up-to-date with the latest architectural trends and have solid experience building systems for scale.
+Computer Science Fundamentals. You are an expert in data structures, distributed systems, consistent hashing, sharding, databases, distributed consensus and consistency algorithms, system performance, and analysis.
+Superhuman coder. Needless to say, you’re a really good programmer, and an expert in the latest advances in asynchronous event-based programming frameworks. We use Python / Golang / Java.
+Fearless bias towards action. You believe that speed and quality aren’t mutually exclusive. You’ve shown good judgment about shipping as fast as possible while still making sure that products and platforms are built in a sustainable, responsible way — and you’re comfortable making mistakes, provided you learn from them.
+Passion and energy. Because you love what you do, you bring infectious enthusiasm to all your endeavors. You always perform at your absolute best and see new challenges as an opportunity to contribute, make an impact, and grow.
+Unquenchable thirst for growth. “Comfortable” is not a word in your vocabulary. You’re not just looking for the next interesting challenge, but instead looking to push yourself to see just how quickly you can grow when inserted into the middle of a hyper-growth environment.
+
+
+Our approach is to deploy whatever technology is best to solve the problem at hand. This often means that we are learning from the bleeding edge of the open-source community or developing our own tools. Recently, FDSEs have deployed:
+Postgres, Cassandra, Hadoop, and Spark for distributed data storage
+Java and Groovy for our back-end applications and data integration tools
+Typescript, AngularJS, jQuery, Backbone, Underscore, Leaflet, and d3 for our web technologies
+Python for data science and machine learning
+Internal frameworks for our rapid iteration tools
+
+
+BS/BA in a technical field such as Computer Science or equivalent experience
+Really, really good software engineers
+People who get excited by tough technical challenges
+You love learning and are passionate about helping others
+You have experience with mobile apps and/or databases
+
+We're looking for brilliant engineers who are hungry to take Dropbox even further. If these large-scale projects resonate with you, and you would like to strongly influence the direction and culture of our Seattle office, we'd love to learn more about you and find out if we can work together.
+Bachelor degree or equivalent is required for this role.
+
+B.S., M.S., or PhD. in Computer Science or equivalent
+Experience with object-oriented programming
+Experience working with databases, relational or NoSQL
+Great oral and written communication skills
+Ability to thrive in a startup environment
+
+8+ years of strong software development experience building highly-reliable, mission- critical software
+Must have domain experience with Active Directory and/or LDAP
+Experience working with a system of scale
+Excellent grasp of software engineering principles
+Nice to haves:
+Knowledge of network security, encryption, authentication and authorization
+Experience with Java and related technologies such as Spring and Hibernate
+Experience with C#
+Lead experience is a plus
