@@ -1,36 +1,14 @@
-class Solution(object):
-    def isNumber(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
-        i = 0
-        n = len(s)
-        while i < n and s[i] == ' ':
-            i += 1
-        if i < n and (s[i] == '+' or s[i] == '-'):
-            i += 1
-        
-        n_nm = 0
-        n_pt = 0
-        while i < n and ('0' <= s[i] <= '9' or s[i] == '.'):
-            if s[i] == '.':
-                n_pt += 1
-            else:
-                n_nm += 1
-            i += 1
-        if n_pt > 1 or n_nm < 1:
-            return False
-        if i < n and s[i] == 'e':
-            i += 1
-            if i < n and (s[i] == '+' or s[i] == '-'):
-                i += 1
-            n_nm = 0
-            while i < n and s[i] >= '0' and s[i] <= '9':
-                i += 1
-                n_nm += 1
-            if n_nm < 1:
-                return False
-        while i < n and s[i] == ' ':
-            i += 1
-        return i == n 
+class Solution {
+public:
+    vector<vector<int> > subsets(vector<int> &S) {
+        sort (S.begin(), S.end());
+        int elem_num = S.size();
+        int subset_num = pow (2, elem_num);
+        vector<vector<int> > subset_set (subset_num, vector<int>());
+        for (int i = 0; i < elem_num; i++)
+            for (int j = 0; j < subset_num; j++)
+                if ((j >> i) & 1)
+                    subset_set[j].push_back (S[i]);
+        return subset_set;
+    }
+};
