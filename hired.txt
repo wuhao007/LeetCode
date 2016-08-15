@@ -1,0 +1,25 @@
+degree: Master
+Total # of years of experience: 2 year
+current job and company: Nutanix
+domain & languages you have most experience working in.
+Python, C++
+
+Passion for what you do...
+Data collecting, cleaning and visualization of clusters. Created software as a service website for analytics. 
+ 
+##Projects:##
+
+Project Name: Description of project (Hyperlink to website, play store, or Github)
+Tech Used: XXX, XXX
+Creating a click-through rate (CTR) prediction pipeline and working with the Criteo Labs dataset that was used for a Kaggle competition
+https://github.com/wuhao007/CS190/blob/master/ML_lab4_ctr_student.ipynb
+Tech Used: Spark, Machine Learning
+
+##What I'm Looking For:##
+
+Role that interests you, type of responsibilities that you are passionate about, industries/products you are interested in, company/team size or funding, company/team culture
+Role title: Software Development Engineer
+Tech stack: Backend, Bigdata, Machine Learning
+Industry: Software
+Company size: Any size
+Culture: Engineer driven

@@ -1,0 +1,93 @@
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+Hi
+I am Hao
+
+hello
+
+
+--------------------------------------------
+
+Give you an array A, of integers
+Your goal is to find 3 indexes, i,j,k such that A[i] + A[j] == A[k]
+
+  A = [5, -10, 6, 1, 11]
+  i = 0, j = 2, k = 4
+     A[0] (5) + A[2] (6) == A[4] (11)
+
+mp = {val:i for i, val in enumerate(A)}
+
+{
+5:0
+-10:1
+}
+res = []
+for i in range(len(A)):
+    for j in range(i + 1, len(A)):
+        s = A[i] + A[j]
+        if s in mp and (mp[s] not in (i, j)):
+            res.append((i, j, mp[s]))
+return res 
+time: O(n^2)
+space: O(n)
+---------------------------------------------------
+
+u1 → 
+u2 → [webserver] → [backend]
+u3 → 
+
+u2 starts sending 1000qps 
+u1, u3 start seeing bad performance, etc, backend is melting!
+
+Rate Limiting with an SLA
+LIMIT: No user can send more than 10+epsilon queries in any one second interval through the webserver
+SLA: Every user can send at least 10 queries in any one second interval through the webserver
+RateLimit(request):
+   returns ACCEPT|REJECT
+
+user_count = {} # name: number of queries
+user_time = {}  # name: first queries times in second 
+
+
+
+u1 t=0.0 ACCECT
+u1 t=0.1 A
+u1 t=0.15 A
+u1 t=0.2 A
+u1 t=0.3 A
+…
+u1 t=1.0 REJECTED
+u1 t=1.05 REJECTED
+u1 t=1.1 ACCEPTED
+u1 t=1.4 REJECTED
+u1 t=1.5 ACCEPTED
+u1 
+
+0.0 0.1 0.3       1.5
+    [                ]
+
+deque = []
+def RateLimit(request):
+    t = request.time 
+    if len(deque) < 10:
+deque.append(t)
+return ACCEPT
+else:
+ft = deque[0]  
+delta = t - ft 
+if delta < 1000:
+    return REJECT
+while deque[0] < t - 1000:  #
+    deque.popleft()       #
+deque.append(t)
+
+10 million users  1,000 qps each 
+too much memory!
+
+
+bloom = Object()  # 
+
+
+hash1(user) hash2(user) hash3(user) hash4(user) hash5(user)
+
+

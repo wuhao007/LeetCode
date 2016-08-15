@@ -1,0 +1,136 @@
+Please use this Google doc to code during your interview. To free your hands for coding, we recommend that you use a headset or a phone with speaker option.
+
+Hi 
+
+---
+
+Write a function that takes a list of UNIX path strings, and returns the deepest parent directory that is common to all of them.
+
+Example input:
+/usr/lib/google/x
+/usr/lib/google/y
+/usr/lib/go/bin
+
+Output:
+/usr/lib/
+
+-----
+
+
+[usr, lib, google, x]
+[usr, lib, google, y]
+[usr, lib, go, bin]
+
+[usr, lib]
+
+‘/’.join()
+
+def deepest(paths):
+n = len(paths)
+if n == 0:
+    return paths
+routes = [path.split() for path in paths]
+
+deepest = routes[0]
+for i in range(n):
+    for j in range(len(routes[i])):
+        if routes[i][j] ! = deepest[j]:
+deepest.pop()
+break
+return ‘/’.join(deepest) + ‘/’
+
+paths = [“/usr/lib/google/x”, “/usr/lib/google/y”, “/usr/lib/go/bin”]
+
+
+
+
+routes = [
+[usr, lib, google, x]
+[usr, lib, google, y]
+[usr, lib, go, bin]
+]
+
+deepest = [usr, lib, google, x]
+
+iter 1:
+deepest = [usr, lib, google, x]
+
+iter 2:
+deepest = [usr, lib, google]
+
+iter 3:
+deepest = [usr, lib]
+
+return 
+/usr/lib/
+
+----
+
+Consider a data structure containing information about each of YouTube's videos, grouped by integer user ID:
+
+map<user_id_type, list<video_info>> video_table;
+
+Compute a list of user ID cut points that split the table into chunks of roughly equal numbers of videos.
+
+For example, returning {100, 200, 300, ...} would imply that users 0-99 combined have about as many videos as users 100-199 combined, and so on.
+
+
+1: 30
+2: 100
+3: 130
+
+video_table, numChunks chunks of roughly equal size
+
+sort 
+
+array = [1: 30, 2: 100, 3: 130]
+total 
+each = total / numChucks
+
+
+right: 
+group(130, 100, 30)
+
+result += [group]
+
+def splitGroup(vidoes_table, numChucks):
+    vidoes_array = [(user_id, len(videos)) for user_id, videos for vidoes_table.items()]
+    vidoes_array.sort(key = lambda x: x[1])
+    left = 0
+    total = sum(n for id, n in vidoes_array)
+    limit = math.ceil(total / numChucks)
+right = len(vidoes_table)
+    result = []
+    
+    for i in range(numChucks):
+        group = []
+        s = 0
+        while left < right:
+            if vidoes_array[right][1] + s < limit:
+                group.append(vidoes_array[right][0])
+                s += vidoes_array[right][1]
+                right -= 1
+            elif vidoes_array[left][1] + s < limit:
+                group.append(vidoes_array[left][0])
+                s += vidoes_array[left][1]
+                left += 1
+            else:
+                result.append((group[:], s))
+    for i in range(left, right + 1):
+        for group, s in result:
+            if s + vidoes_array[i][1] < limit:
+                group.append(vidoes_array[i][0])
+                
+    return [item[0] for item in result] 
+            
+
+1: 10
+2: 40
+3: 30
+4: 20
+
+[1:10 4:20, 3:30, 2:40]
+numChuck = 2
+
+total = 100
+limit = 50
